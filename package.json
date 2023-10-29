@@ -5,7 +5,7 @@
   "license": "ISC",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "nodejs",
