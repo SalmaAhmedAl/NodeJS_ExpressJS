@@ -17,6 +17,7 @@
     "url": "https://github.com/SalmaAhmedAl/NodeJS_ExpressJS.git"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
