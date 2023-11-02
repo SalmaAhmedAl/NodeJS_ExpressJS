@@ -2,6 +2,9 @@ const express = require("express");
 const {people} = require('./data');
 const app = express();
 
+//static assets
+app.use(express.static('./methods-public')); //that's build in middleware
+
 app.get('/api/people', (req, res)=>{
     res.status(200).json({success:true, data: people});
 });
