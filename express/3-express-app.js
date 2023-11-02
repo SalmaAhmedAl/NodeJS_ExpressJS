@@ -3,7 +3,9 @@ const path = require('path');
 const app = express();
 
 //setup static and middleware
- 
+
+//make all the files in public folder available to the world
+//all files are static assets
 app.use(express.static('./public'));
 
 // app.get("/", (req, res) => {
