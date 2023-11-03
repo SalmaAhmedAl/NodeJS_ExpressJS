@@ -3,11 +3,11 @@ let {people} = require('../data');
 
 const router = express.Router();
 
-router.get('/api/people', (req, res)=>{
+router.get('/', (req, res)=>{
     res.status(200).json({success:true, data: people});
 });
 
-router.post('/api/people', (req, res)=>{
+router.post('/', (req, res)=>{
     const {name} = req.body; //the middleware makes it possible now
     if(!name){
         return res.status(400).json({success: false, ms:'Please provide name value.'});
@@ -15,16 +15,8 @@ router.post('/api/people', (req, res)=>{
     res.status(201).json({success: true, person: name});
 });
 
-router.post('/login', (req, res)=>{
-    console.log(req.body);
-    const {name} = req.body;
-    if(name){
-        return res.status(200).send(`Welcome, ${name}`);
-    }
-    res.status(401).send('Please, Provide Credentials');
-});
 
-router.put('/api/people/:id', (req, res)=>{
+router.put('/:id', (req, res)=>{
     const {id} = req.params;
     const name = req.body;
 
@@ -46,7 +38,7 @@ router.put('/api/people/:id', (req, res)=>{
     res.status(200).json({success: true, data: newPerson});
 });
 
-router.delete('/api/people/:id', (req, res)=>{
+router.delete('/:id', (req, res)=>{
     const person = people.find((person)=>{
         person.id === Number(req.params.id);
     });
